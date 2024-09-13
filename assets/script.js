@@ -42,26 +42,26 @@ function updateSlide(index) {
 	});
 }
 
-	// Ajout de l'event listener sur la flèche droite
-	rightArrow.addEventListener('click', function () {
-	//console.log("Flèche droite cliquée");
+// Ajout de l'event listener sur la flèche droite
+rightArrow.addEventListener('click', function () {
+//console.log("Flèche droite cliquée");
 	
-	// Gestion du clic sur la flèche droite
-		initSlide = (initSlide + 1) % slides.length; // Passer à la slide suivante
-        updateSlide(initSlide);
-    });
+// Gestion du clic sur la flèche droite
+initSlide = (initSlide + 1) % slides.length; // Passer à la slide suivante
+updateSlide(initSlide);
+});
 
-	// Ajout de l'event listener sur la flèche droite
-    leftArrow.addEventListener('click', function () {
-    //console.log("Flèche gauche cliquée"); 
+// Ajout de l'event listener sur la flèche droite
+leftArrow.addEventListener('click', function () {
+//console.log("Flèche gauche cliquée"); 
 		
-	// Gestion du clic sur la flèche droite
-		initSlide = (initSlide - 1 + slides.length) % slides.length; // Revenir à la slide précédente
-        updateSlide(initSlide);
-    });
+// Gestion du clic sur la flèche droite
+initSlide = (initSlide - 1 + slides.length) % slides.length; // Revenir à la slide précédente
+updateSlide(initSlide);
+});
 
-	// Initialisation du carrousel avec la première slide
-    updateSlide(initSlide);
+// Initialisation du carrousel avec la première slide
+updateSlide(initSlide);
 
 	
   	
