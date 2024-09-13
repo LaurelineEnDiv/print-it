@@ -17,18 +17,33 @@ const slides = [
 	}
 ]
 
-    // Sélection des flèches
-    const rightArrow = document.querySelector('.arrow_right');
-    const leftArrow = document.querySelector('.arrow_left');
+// Sélection des éléments du DOM
+const rightArrow = document.querySelector('.arrow_right');
+const leftArrow = document.querySelector('.arrow_left');
+const bannerImg = document.querySelector('.banner-img');
+const bannerTagline = document.querySelector('p');
+const dots = document.querySelectorAll('.dot');
 
-    // Ajout des event listeners sur les flèches
-    rightArrow.addEventListener('click', function () {
-        console.log("Flèche droite cliquée");
+	// Mise à jour du bullet point actif
+	dots.forEach((dot, i) => {
+		if (i === index) {
+			dot.classList.add('dot_selected'); // Activation du point 
+		} else {
+			dot.classList.remove('dot_selected'); // Désactivation des autres points
+		}
+	});
+
+	// Ajout de l'event listener sur la flèche droite
+	rightArrow.addEventListener('click', function () {
+	console.log("Flèche droite cliquée");
     });
 
+	// Ajout de l'event listener sur la flèche droite
     leftArrow.addEventListener('click', function () {
-        console.log("Flèche gauche cliquée"); 
+    console.log("Flèche gauche cliquée"); 
     });
 
-
+	
+  	
+    
 
