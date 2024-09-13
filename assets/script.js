@@ -24,24 +24,44 @@ const bannerImg = document.querySelector('.banner-img');
 const bannerTagline = document.querySelector('p');
 const dots = document.querySelectorAll('.dot');
 
-	// Mise à jour du bullet point actif
+let initSlide = 0; // La première diapositive est active au début
+
+// Fonction pour mettre à jour le carrousel
+function updateSlide(index) {
+	// Mettre à jour l'image et la tagline
+	bannerImg.src = `./assets/images/slideshow/${slides[index].image}`;
+	bannerTagline.innerHTML = slides[index].tagLine;
+
+	// Mettre à jour le bullet point actif
 	dots.forEach((dot, i) => {
 		if (i === index) {
-			dot.classList.add('dot_selected'); // Activation du point 
+			dot.classList.add('dot_selected'); // Activer le point courant
 		} else {
-			dot.classList.remove('dot_selected'); // Désactivation des autres points
+			dot.classList.remove('dot_selected'); // Désactiver les autres points
 		}
 	});
+}
 
 	// Ajout de l'event listener sur la flèche droite
 	rightArrow.addEventListener('click', function () {
-	console.log("Flèche droite cliquée");
+	//console.log("Flèche droite cliquée");
+	
+	// Gestion du clic sur la flèche droite
+		initSlide = (initSlide + 1) % slides.length; // Passer à la slide suivante
+        updateSlide(initSlide);
     });
 
 	// Ajout de l'event listener sur la flèche droite
     leftArrow.addEventListener('click', function () {
-    console.log("Flèche gauche cliquée"); 
+    //console.log("Flèche gauche cliquée"); 
+		
+	// Gestion du clic sur la flèche droite
+		initSlide = (initSlide - 1 + slides.length) % slides.length; // Revenir à la slide précédente
+        updateSlide(initSlide);
     });
+
+	// Initialisation du carrousel avec la première slide
+    updateSlide(initSlide);
 
 	
   	
